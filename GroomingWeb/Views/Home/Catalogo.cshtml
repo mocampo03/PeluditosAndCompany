@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Catálogo";
+}
+
+<h1 class="mb-4">Catálogo</h1>
+
+<div class="row" id="catalogo"></div>
+
+@section Scripts {
+    <script>
+        function verDetalle(id) {
+            window.location.href = `/Home/Detalle?id=${id}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const contenedor = document.getElementById("catalogo");
+            contenedor.innerHTML = "";
+
+            try {
+                const db = firebase.firestore();
+                const snapshot = await db
+                    .collection("productos")
+                    .where("activo", "==", true)
+                    .get();
+
+                if (snapshot.empty) {
+                    contenedor.innerHTML = `
+                        <div class="alert alert-warning text-center">
+                            No hay productos disponibles todavía.
+                        </div>`;
+                    return;
+                }
+
+                snapshot.forEach(doc => {
+                    const p = doc.data();
+                    const id = doc.id;
+
+                    const col = document.createElement("div");
+                    col.className = "col-md-4 mb-4";
+
+                    col.innerHTML = `
+                        <div class="card h-100 shadow">
+                            <img src="${p.imagenUrl}" class="card-img-top"
+                                 style="height:220px; object-fit:cover; cursor:pointer">
+                            <div class="card-body">
+                                <h5 class="card-title">${p.nombre}</h5>
+                                <p class="card-text">${p.descripcion}</p>
+                                <p class="fw-bold">₡${p.precio.toLocaleString()}</p>
+
+                                <button class="btn btn-primary w-100 btn-add-cart" type="button"
+                                    data-id="${id}"
+                                    data-nombre="${encodeURIComponent(p.nombre)}"
+                                    data-precio="${p.precio}"
+                                    data-imagen="${encodeURIComponent(p.imagenUrl)}">
+                                    🛒 Agregar al carrito
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    // detalle
+                    col.querySelector("img").addEventListener("click", () => verDetalle(id));
+
+                    // Click a botón -> carrito
+                    col.querySelector(".btn-add-cart").addEventListener("click", (e) => {
+                        const btn = e.currentTarget;
+
+                        const pid = btn.dataset.id;
+                        const nombre = decodeURIComponent(btn.dataset.nombre || "");
+                        const precio = Number(btn.dataset.precio || "0");
+                        const imagen = decodeURIComponent(btn.dataset.imagen || "");
+
+                        addToCart(pid, nombre, precio, imagen);
+                    });
+
+                    contenedor.appendChild(col);
+                });
+
+            } catch (err) {
+                console.error(err);
+                contenedor.innerHTML = `
+                    <div class="alert alert-danger text-center">
+                        Error cargando catálogo. Revisa consola (F12).
+                    </div>`;
+            }
+        });
+
+        function addToCart(id, nombre, precio, imagen) {
+            // Bloqueo si NO hay sesión
+            if (!window.__user) {
+                requireLogin("Inicia sesión para agregar productos al carrito.");
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+            const existing = cart.find(p => String(p.id) === String(id));
+            if (existing) {
+                existing.cantidad += 1;
+            } else {
+                cart.push({
+                    id,
+                    nombre,
+                    precio,
+                    imagen,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Producto agregado al carrito");
+        }
+    </script>
+}
+

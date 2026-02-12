@@ -1,0 +1,116 @@
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.Development.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.staticwebassets.runtime.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.staticwebassets.endpoints.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.exe
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.deps.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.runtimeconfig.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.dll
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.pdb
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rpswa.dswa.cache.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.GeneratedMSBuildEditorConfig.editorconfig
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfoInputs.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfo.cs
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.csproj.CoreCompileInputs.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.MvcApplicationPartsAssemblyInfo.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cs
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjimswa.dswa.cache.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/bundle/GroomingWeb.styles.css
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/projectbundle/GroomingWeb.bundle.scp.css
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.json.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.development.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/swae.build.ex.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.upToDateCheck.txt
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.dll
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/refint/GroomingWeb.dll
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.pdb
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.genruntimeconfig.cache
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/ref/GroomingWeb.dll
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/web.config
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.Development.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.deps.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.runtimeconfig.json
+C:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.staticwebassets.endpoints.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/web.config
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.Development.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.Development.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.deps.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.runtimeconfig.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.staticwebassets.endpoints.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.staticwebassets.runtime.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.staticwebassets.endpoints.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.exe
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.deps.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.runtimeconfig.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.dll
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.pdb
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rpswa.dswa.cache.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.GeneratedMSBuildEditorConfig.editorconfig
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfoInputs.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfo.cs
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.csproj.CoreCompileInputs.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.MvcApplicationPartsAssemblyInfo.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cs
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjimswa.dswa.cache.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/bundle/GroomingWeb.styles.css
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/projectbundle/GroomingWeb.bundle.scp.css
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.json.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.development.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/swae.build.ex.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.upToDateCheck.txt
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.dll
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/refint/GroomingWeb.dll
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.pdb
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.genruntimeconfig.cache
+F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/ref/GroomingWeb.dll
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/web.config
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.Development.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/appsettings.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/appsettings.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.deps.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.runtimeconfig.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/publish/GroomingWeb.staticwebassets.endpoints.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.staticwebassets.runtime.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.deps.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.runtimeconfig.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.dll
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/bin/Debug/net8.0/GroomingWeb.pdb
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.GeneratedMSBuildEditorConfig.editorconfig
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfoInputs.cache
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.AssemblyInfo.cs
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.csproj.CoreCompileInputs.cache
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.MvcApplicationPartsAssemblyInfo.cache
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cache
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.RazorAssemblyInfo.cs
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.build.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.development.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets/msbuild.GroomingWeb.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets/msbuild.build.GroomingWeb.props
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.GroomingWeb.props
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.GroomingWeb.props
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/bundle/GroomingWeb.styles.css
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/scopedcss/projectbundle/GroomingWeb.bundle.scp.css
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.dll
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/refint/GroomingWeb.dll
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.pdb
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.genruntimeconfig.cache
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/ref/GroomingWeb.dll

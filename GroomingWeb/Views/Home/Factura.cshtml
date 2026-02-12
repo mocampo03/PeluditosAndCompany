@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Factura";
+}
+
+<div class="container my-5 d-flex justify-content-center">
+    <div class="p-4 shadow rounded bg-white" style="max-width: 500px; width:100%;" id="facturaWrap">
+
+        <h2 class="text-center mb-3">Peluditos & Co</h2>
+        <p class="text-center text-muted mb-4">Factura / Ticket</p>
+
+        <hr>
+
+        <div id="facturaItems"></div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between fw-bold fs-5">
+            <span>Total</span>
+            <span id="facturaTotal">₡0</span>
+        </div>
+
+        <hr>
+
+        <p class="text-center fw-semibold mt-4">
+            🐶 Presente esta factura en tienda y pague físicamente
+            para retirar su pedido.
+        </p>
+
+        <div class="text-center mt-4">
+            <a href="/Home/Catalogo" class="btn btn-outline-secondary">
+                Seguir comprando
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart") || "[]");
+        }
+
+        function formatCRC(value) {
+            return "₡" + value.toLocaleString();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+        firebase.auth().onAuthStateChanged(user => {
+            if (!user) {
+                requireLogin("Inicia sesión para continuar con la factura.");
+                document.getElementById("facturaWrap").style.display = "none";
+                return;
+            }
+
+            // aquí va la lógica de factura...
+        });
+
+            const items = document.getElementById("facturaItems");
+            const totalEl = document.getElementById("facturaTotal");
+            const cart = getCart();
+
+            if (cart.length === 0) {
+                items.innerHTML = `
+                    <div class="alert alert-warning text-center">
+                        No hay productos para facturar.
+                    </div>`;
+                totalEl.textContent = formatCRC(0);
+                return;
+            }
+
+            let total = 0;
+            items.innerHTML = "";
+
+            cart.forEach(p => {
+                const subtotal = p.precio * p.cantidad;
+                total += subtotal;
+
+                items.innerHTML += `
+                    <div class="d-flex justify-content-between mb-2">
+                        <div>
+                            ${p.nombre} <span class="text-muted">x${p.cantidad}</span>
+                        </div>
+                        <div>${formatCRC(subtotal)}</div>
+                    </div>
+                `;
+            });
+
+            totalEl.textContent = formatCRC(total);
+
+            // VACÍA EL CARRITO DESPUÉS DE GENERAR LA FACTURA
+            localStorage.removeItem("cart");
+        });
+    </script>
+}
+
+

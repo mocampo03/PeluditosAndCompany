@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Detalle";
+    var id = Context.Request.Query["id"].ToString();
+}
+
+<div class="container mt-4" id="detalleProducto"></div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const contenedor = document.getElementById("detalleProducto");
+            const productId = "@id";
+
+            if (!productId) {
+                contenedor.innerHTML = `
+                    <div class="alert alert-warning text-center">
+                        Producto no encontrado.
+                    </div>`;
+                return;
+            }
+
+            try {
+                const db = firebase.firestore();
+                const docRef = db.collection("productos").doc(productId);
+                const docSnap = await docRef.get();
+
+                if (!docSnap.exists) {
+                    contenedor.innerHTML = `
+                        <div class="alert alert-warning text-center">
+                            Producto no encontrado.
+                        </div>`;
+                    return;
+                }
+
+                const p = docSnap.data();
+
+                contenedor.innerHTML = `
+                    <div class="row g-4 align-items-start">
+                        <div class="col-md-6">
+                            <img src="${p.imagenUrl}"
+                                 class="img-fluid rounded shadow"
+                                 alt="${p.nombre}">
+                        </div>
+
+                        <div class="col-md-6">
+                            <h2 class="mb-3">${p.nombre}</h2>
+
+                            <p class="fs-5">${p.descripcion}</p>
+
+                            <h4 class="text-success fw-bold mt-3">
+                                ₡${p.precio.toLocaleString()}
+                            </h4>
+
+                            <button class="btn btn-primary mt-3" id="btnAddCart"
+                                data-id="${productId}"
+                                data-nombre="${encodeURIComponent(p.nombre)}"
+                                data-precio="${p.precio}"
+                                data-imagen="${encodeURIComponent(p.imagenUrl)}">
+                                🛒 Agregar al carrito
+                            </button>
+
+                            <div class="mt-4">
+                                <a href="/Home/Catalogo" class="btn btn-secondary">
+                                    ⬅ Volver al catálogo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Evento del botón
+                const btn = document.getElementById("btnAddCart");
+                btn.addEventListener("click", () => {
+                    const id = btn.dataset.id;
+                    const nombre = decodeURIComponent(btn.dataset.nombre || "");
+                    const precio = Number(btn.dataset.precio || "0");
+                    const imagen = decodeURIComponent(btn.dataset.imagen || "");
+
+                    addToCart(id, nombre, precio, imagen);
+                });
+
+            } catch (err) {
+                console.error(err);
+                contenedor.innerHTML = `
+                    <div class="alert alert-danger text-center">
+                        Error cargando el producto. Revisa consola (F12).
+                    </div>`;
+            }
+        });
+
+        function addToCart(id, nombre, precio, imagen) {
+            // Bloqueo si NO hay sesión
+            if (!window.__user) {
+                requireLogin("Inicia sesión para agregar productos al carrito.");
+                return;
+            }
+
+            const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+            const existing = cart.find(p => String(p.id) === String(id));
+            if (existing) {
+                existing.cantidad += 1;
+            } else {
+                cart.push({
+                    id,
+                    nombre,
+                    precio,
+                    imagen,
+                    cantidad: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Producto agregado al carrito");
+        }
+    </script>
+}

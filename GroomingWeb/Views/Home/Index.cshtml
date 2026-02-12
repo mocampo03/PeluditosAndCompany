@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container my-5">
+
+    <!-- HERO -->
+    <div class="p-5 rounded shadow" style="background: rgba(255,255,255,0.35);">
+        <h1 class="display-5 fw-bold mb-3">
+            ¿Quieres hacer grooming a tu peludito?
+        </h1>
+
+        <p class="fs-4 mb-4">
+            Saca tu cita ya y déjalo impecable con nosotros 🐶✂️
+        </p>
+
+        <div class="text-center">
+            <a class="btn btn-primary btn-lg btn-cta" href="/Home/Citas">
+                📅 Sacar cita ya
+            </a>
+        </div>
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="mt-5">
+        <h2 class="mb-3">Mira algunos peluditos después del grooming</h2>
+
+        <div id="carouselWrap"></div>
+    </div>
+
+    <!-- BENEFICIOS / INFO RÁPIDA -->
+    <div class="row mt-5 g-4">
+        <div class="col-md-4">
+            <div class="p-4 rounded shadow-sm bg-white">
+                <h4>✂️ Grooming profesional</h4>
+                <p class="mb-0">Cortes según raza, baño completo y cuidado con cariño.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded shadow-sm bg-white">
+                <h4>🧼 Productos de calidad</h4>
+                <p class="mb-0">Shampoo especializado, secado correcto y accesorios.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded shadow-sm bg-white">
+                <h4>📍 Ubicación y horario</h4>
+                <p class="mb-0">Revisa Conócenos para ver mapa y horario de atención.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        // carrousel firebase
+        const carouselImages = [
+            "https://firebasestorage.googleapis.com/v0/b/groomingweb-5a119.firebasestorage.app/o/carrousel%20inicio%2Fperritolisto1.jpeg?alt=media&token=40e081be-b94d-43b5-9e30-e64f3f9df225",
+            "https://firebasestorage.googleapis.com/v0/b/groomingweb-5a119.firebasestorage.app/o/carrousel%20inicio%2Fperritolisto2.jpeg?alt=media&token=2c34f6a5-131a-421e-85a2-e7637f01ad75",
+            "https://firebasestorage.googleapis.com/v0/b/groomingweb-5a119.firebasestorage.app/o/carrousel%20inicio%2Fperritolisto3.jpeg?alt=media&token=3183d0f7-6fab-4fca-b206-461ae1ec23e4"
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const wrap = document.getElementById("carouselWrap");
+
+            if (!carouselImages || carouselImages.length === 0) {
+                wrap.innerHTML = `
+                    <div class="alert alert-warning">
+                        No hay imágenes para el carrusel todavía.
+                    </div>`;
+                return;
+            }
+
+            const indicators = carouselImages.map((_, i) => `
+                <button type="button" data-bs-target="#groomingCarousel" data-bs-slide-to="${i}"
+                        class="${i === 0 ? "active" : ""}" aria-current="${i === 0 ? "true" : "false"}"
+                        aria-label="Slide ${i + 1}">
+                </button>
+            `).join("");
+
+            const slides = carouselImages.map((url, i) => `
+                <div class="carousel-item ${i === 0 ? "active" : ""}">
+                    <img src="${url}"
+                         class="d-block w-100 carousel-square-img"
+                         alt="Peludito ${i + 1}">
+                </div>
+            `).join("");
+
+            wrap.innerHTML = `
+                   <div id="groomingCarousel"
+                        class="carousel slide shadow rounded carousel-square-small"
+                        data-bs-ride="carousel"
+                        data-bs-interval="3500">
+
+                    <div class="carousel-indicators">
+                        ${indicators}
+                    </div>
+
+                    <div class="carousel-inner rounded">
+                        ${slides}
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#groomingCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#groomingCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+            `;
+        });
+    </script>
+}

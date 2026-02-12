@@ -1,0 +1,293 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\conocenos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\conocenos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\factura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\factura.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\detalle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\contacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\contacto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\citas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\citas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\catalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\catalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\home\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\home\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\admin\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\admin\\productos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|f:\\fidelitas\\implantacion de sistemas\\groomingweb\\groomingweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{77F89193-616D-1B2C-7C11-6BA06BC78EF4}|GroomingWeb\\GroomingWeb.csproj|solutionrelative:groomingweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "GroomingWeb\\Controllers\\AccountController.cs",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "GroomingWeb\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T21:12:09.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Detalle.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Detalle.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Detalle.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Detalle.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Detalle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-29T00:10:55.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "site.js",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "GroomingWeb\\wwwroot\\js\\site.js",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "GroomingWeb\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-28T21:42:00.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Carrito.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Carrito.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Carrito.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Carrito.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Carrito.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-29T03:06:23.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Catalogo.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Catalogo.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Catalogo.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Catalogo.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Catalogo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T20:30:09.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowCgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T19:40:16.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conocenos.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Conocenos.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Conocenos.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Conocenos.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Conocenos.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T19:39:14.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Account\\Login.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T21:12:51.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Account\\Register.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T21:13:19.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "GroomingWeb\\Controllers\\AdminController.cs",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "GroomingWeb\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T05:30:29.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Citas.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Citas.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Citas.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Citas.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Citas.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-29T01:38:39.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GroomingWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GroomingWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T19:35:44.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Factura.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Factura.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Factura.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Factura.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Factura.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-29T03:20:14.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T20:15:43.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Contacto.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Contacto.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Home\\Contacto.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Home\\Contacto.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Home\\Contacto.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-28T19:39:55.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Productos.cshtml",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Admin\\Productos.cshtml",
+              "RelativeDocumentMoniker": "GroomingWeb\\Views\\Admin\\Productos.cshtml",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\Views\\Admin\\Productos.cshtml",
+              "RelativeToolTip": "GroomingWeb\\Views\\Admin\\Productos.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-29T05:31:42.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "site.css",
+              "DocumentMoniker": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "GroomingWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "F:\\Fidelitas\\Implantacion de Sistemas\\GroomingWeb\\GroomingWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "GroomingWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-28T20:13:15.335Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

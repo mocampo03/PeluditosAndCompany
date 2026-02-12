@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Carrito";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4 text-center">Carrito 🛒</h1>
+
+    <div id="cartContainer"></div>
+
+    <div class="mt-4 p-4 rounded shadow bg-white text-center">
+        <h3>Total</h3>
+        <h2 class="fw-bold text-success" id="cartTotal">₡0</h2>
+
+        <a href="/Home/Factura" class="btn btn-primary btn-lg mt-3">
+            Siguiente ➡️
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function getCart() {
+            return JSON.parse(localStorage.getItem("cart") || "[]");
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        function formatCRC(value) {
+            return "₡" + value.toLocaleString();
+        }
+
+        function renderCart() {
+            const cart = getCart();
+            const container = document.getElementById("cartContainer");
+            const totalEl = document.getElementById("cartTotal");
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center">
+                        Tu carrito está vacío.
+                    </div>`;
+                totalEl.textContent = formatCRC(0);
+                return;
+            }
+
+            let total = 0;
+
+            container.innerHTML = `
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th class="text-center">Cantidad</th>
+                                <th class="text-end">Precio</th>
+                                <th class="text-end">Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartBody"></tbody>
+                    </table>
+                </div>
+            `;
+
+            const body = document.getElementById("cartBody");
+
+            cart.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+
+                const safeId = String(item.id).replace(/'/g, "\\'");
+
+                body.innerHTML += `
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="${item.imagen}" style="width:70px;height:70px;object-fit:cover;border-radius:12px;">
+                                <div>
+                                    <div class="fw-bold">${item.nombre}</div>
+                                    <div class="small text-muted">${item.descripcion ?? ""}</div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="changeQty('${safeId}', -1)">−</button>
+                            <span class="mx-2">${item.cantidad}</span>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="changeQty('${safeId}', 1)">+</button>
+                        </td>
+
+                        <td class="text-end">${formatCRC(item.precio)}</td>
+                        <td class="text-end fw-bold">${formatCRC(subtotal)}</td>
+
+                        <td class="text-end">
+                            <button class="btn btn-danger btn-sm" onclick="removeItem('${safeId}')">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            totalEl.textContent = formatCRC(total);
+        }
+
+        function changeQty(id, delta) {
+            const cart = getCart();
+            const item = cart.find(x => String(x.id) === String(id));
+            if (!item) return;
+
+            item.cantidad += delta;
+
+            if (item.cantidad <= 0) {
+                saveCart(cart.filter(x => String(x.id) !== String(id)));
+            } else {
+                saveCart(cart);
+            }
+
+            renderCart();
+        }
+
+        function removeItem(id) {
+            saveCart(getCart().filter(x => String(x.id) !== String(id)));
+            renderCart();
+        }
+
+        document.addEventListener("DOMContentLoaded", renderCart);
+    </script>
+}

@@ -1,0 +1,7 @@
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\GroomingWeb.exe
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\appsettings.Development.json
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\appsettings.json
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\GroomingWeb.dll
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\GroomingWeb.deps.json
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\GroomingWeb.runtimeconfig.json
+C:\Fidelitas\Implantacion de Sistemas\GroomingWeb\GroomingWeb\publish\GroomingWeb.pdb

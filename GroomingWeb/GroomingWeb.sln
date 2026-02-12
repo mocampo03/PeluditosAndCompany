@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroomingWeb", "GroomingWeb.csproj", "{0860F0EC-E306-4209-63FC-0FD2DB870A3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0860F0EC-E306-4209-63FC-0FD2DB870A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0860F0EC-E306-4209-63FC-0FD2DB870A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0860F0EC-E306-4209-63FC-0FD2DB870A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0860F0EC-E306-4209-63FC-0FD2DB870A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7913FB40-5201-4377-9297-A23FA3D06364}
+	EndGlobalSection
+EndGlobal

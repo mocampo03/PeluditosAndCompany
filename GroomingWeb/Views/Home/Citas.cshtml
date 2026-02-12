@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Citas";
+}
+
+<style>
+    /* ✅ Calendario responsive (sin recortes) */
+    .calendar-embed {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 18px;
+        background: #fff;
+    }
+
+    .calendar-iframe {
+        width: 100%;
+        border: 0;
+        display: block;
+        /* Desktop/tablet */
+        height: 75vh;
+        min-height: 560px;
+        max-height: 860px;
+    }
+
+    /* ✅ Móvil: más alto para que quepa bien el UI de Google */
+    @@media (max-width: 768px) {
+        .calendar-iframe {
+            height: 80vh;
+            min-height: 640px;
+            max-height: none;
+        }
+    }
+</style>
+
+<div class="container my-5 text-center">
+    <h1 class="mb-3">Citas</h1>
+    <p class="fs-5 mb-4">
+        Selecciona el día y la hora disponible dentro de nuestro horario de atención.
+    </p>
+
+    <!-- Contenedor donde iremos a poner el calendario (solo si hay sesión) -->
+    <div id="calendarWrap"></div>
+
+    <div class="mt-4">
+        <h5 class="mb-2">Horario de atención</h5>
+        <ul class="fs-5 list-unstyled">
+            <li><strong>Martes a Viernes:</strong> 10:00 a.m. – 6:00 p.m.</li>
+            <li><strong>Sábados:</strong> 8:00 a.m. – 5:30 p.m.</li>
+        </ul>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const wrap = document.getElementById("calendarWrap");
+
+                firebase.auth().onAuthStateChanged(user => {
+                    if (!user) {
+                        // No hay sesión
+                        requireLogin("Inicia sesión para sacar una cita.");
+                        wrap.innerHTML = "";
+                        return;
+                    }
+
+                    // Sí hay sesión: cargamos el calendario
+                    wrap.innerHTML = `
+                        <div class="calendar-embed shadow">
+                            <iframe
+                               class="calendar-iframe"
+                               src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2x90mMNnEo8NVMQxZ3cEXwQGWuvYzlUpUT_vpWp6U2yzxfttJJEF9DCrhsMjqSt3TeqffEyXuE?gv=true"
+                               loading="lazy"
+                               referrerpolicy="no-referrer-when-downgrade"
+                               allowfullscreen>
+                            </iframe>
+                        </div>
+                    `;
+                });
+            });
+    </script>
+}

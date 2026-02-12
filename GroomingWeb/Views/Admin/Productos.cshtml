@@ -1,0 +1,372 @@
+﻿@{
+    ViewData["Title"] = "Administrar productos";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Administrar productos</h1>
+
+    <div id="adminWarning"></div>
+
+    <!-- CREAR PRODUCTO -->
+    <div class="auth-card mb-5" style="max-width:750px; margin:0 auto;">
+        <h3 class="text-center mb-4">Nuevo producto</h3>
+
+        <form id="productoForm">
+            <input class="form-control mb-3" id="nombre" placeholder="Nombre" required />
+
+            <textarea class="form-control mb-3" id="descripcion"
+                      placeholder="Descripción" rows="3" required></textarea>
+
+            <input class="form-control mb-3" id="precio"
+                   type="number" min="0" placeholder="Precio (₡)" required />
+
+            <input class="form-control mb-3" id="imagen"
+                   type="file" accept="image/*" required />
+
+            <button class="btn btn-primary w-100" id="btnCrear" type="submit">
+                Guardar producto
+            </button>
+        </form>
+
+        <div class="text-center mt-3 fw-semibold" id="statusCrear"></div>
+    </div>
+
+    <!-- LISTA DE PRODUCTOS -->
+    <div style="max-width:1000px; margin:0 auto;">
+        <h3 class="mb-3 text-center">Productos existentes</h3>
+        <div id="productosLista"></div>
+        <div class="text-center mt-3" id="statusLista"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            //ADMIN_UID existe global en _Layout.cshtml
+            const statusCrear = document.getElementById("statusCrear");
+            const statusLista = document.getElementById("statusLista");
+            const warnEl = document.getElementById("adminWarning");
+
+            const form = document.getElementById("productoForm");
+            const btnCrear = document.getElementById("btnCrear");
+
+            const lista = document.getElementById("productosLista");
+
+            function setStatus(el, msg, error=false) {
+                el.textContent = msg;
+                el.style.color = error ? "crimson" : "green";
+            }
+
+            function isAdmin(user) {
+                return user && user.uid === ADMIN_UID;
+            }
+
+            firebase.auth().onAuthStateChanged(async user => {
+                if (!isAdmin(user)) {
+                    warnEl.innerHTML = `
+                        <div class="alert alert-danger text-center">
+                            Solo el administrador puede acceder a esta página.
+                        </div>`;
+                    form.style.display = "none";
+                    lista.innerHTML = "";
+                    return;
+                }
+
+                // Admin OK → cargar lista
+                await cargarProductos();
+            });
+
+            // CREAR PRODUCTO
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const user = firebase.auth().currentUser;
+                if (!isAdmin(user)) { alert("Acceso denegado"); return; }
+
+                btnCrear.disabled = true;
+
+                const nombre = document.getElementById("nombre").value.trim();
+                const descripcion = document.getElementById("descripcion").value.trim();
+                const precio = Number(document.getElementById("precio").value);
+                const file = document.getElementById("imagen").files[0];
+
+                if (!nombre || !descripcion || !file || Number.isNaN(precio)) {
+                    btnCrear.disabled = false;
+                    alert("Completa nombre, descripción, precio e imagen.");
+                    return;
+                }
+
+                try {
+                    setStatus(statusCrear, "Subiendo imagen...");
+
+                    const storageRef = firebase.storage().ref();
+                    const safeName = file.name.replace(/\s+/g, "_");
+                    const path = `productos/${Date.now()}_${safeName}`;
+                    const imgRef = storageRef.child(path);
+
+                    const uploadTask = imgRef.put(file);
+
+                    await new Promise((resolve, reject) => {
+                        uploadTask.on("state_changed",
+                            (snap) => {
+                                const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 100);
+                                setStatus(statusCrear, `Subiendo imagen... ${pct}%`);
+                            },
+                            reject,
+                            resolve
+                        );
+                    });
+
+                    const imageUrl = await imgRef.getDownloadURL();
+
+                    setStatus(statusCrear, "Guardando producto...");
+
+                    const db = firebase.firestore();
+                    await db.collection("productos").add({
+                        nombre,
+                        descripcion,
+                        precio,
+                        imagenUrl: imageUrl,
+                        imagePath: path,     
+                        activo: true,
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+
+                    setStatus(statusCrear, "✅ Producto creado");
+                    form.reset();
+
+                    await cargarProductos();
+
+                } catch (err) {
+                    console.error(err);
+                    setStatus(statusCrear, "❌ Error: " + (err?.message || err), true);
+                    alert("Error: " + (err?.message || err));
+                } finally {
+                    btnCrear.disabled = false;
+                }
+            });
+
+            // LISTAR PRODUCTOS
+            async function cargarProductos() {
+                try {
+                    setStatus(statusLista, "Cargando productos...");
+                    lista.innerHTML = "";
+
+                    const db = firebase.firestore();
+                    const snap = await db.collection("productos")
+                        .orderBy("createdAt", "desc")
+                        .get();
+
+                    if (snap.empty) {
+                        lista.innerHTML = `<div class="alert alert-warning text-center">No hay productos aún.</div>`;
+                        setStatus(statusLista, "");
+                        return;
+                    }
+
+                    snap.forEach(doc => {
+                        const p = doc.data();
+                        lista.appendChild(renderProductoRow(doc.id, p));
+                    });
+
+                    setStatus(statusLista, "");
+                } catch (err) {
+                    console.error(err);
+                    setStatus(statusLista, "❌ Error cargando lista: " + (err?.message || err), true);
+                }
+            }
+
+            function renderProductoRow(id, p) {
+                const wrap = document.createElement("div");
+                wrap.className = "card shadow-sm mb-3";
+
+                wrap.innerHTML = `
+                    <div class="card-body">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-md-2 text-center">
+                                <img src="${p.imagenUrl}" style="width:110px;height:110px;object-fit:cover;border-radius:12px;"
+                                     class="shadow-sm" alt="${p.nombre}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold mb-1">Nombre</label>
+                                <input class="form-control mb-2" value="${escapeHtml(p.nombre)}" data-field="nombre">
+
+                                <label class="form-label fw-semibold mb-1">Descripción</label>
+                                <textarea class="form-control" rows="2" data-field="descripcion">${escapeHtml(p.descripcion)}</textarea>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label class="form-label fw-semibold mb-1">Precio (₡)</label>
+                                <input class="form-control mb-2" type="number" min="0" value="${p.precio}" data-field="precio">
+
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" type="checkbox" data-field="activo" ${p.activo ? "checked" : ""}>
+                                    <label class="form-check-label">Activo</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 d-grid gap-2">
+                                <button class="btn btn-success" data-action="guardar">Guardar</button>
+
+                                <label class="btn btn-outline-primary mb-0">
+                                    Cambiar imagen
+                                    <input type="file" accept="image/*" data-action="imagen" hidden>
+                                </label>
+
+                                <button class="btn btn-outline-danger" data-action="eliminar">
+                                    Eliminar definitivo
+                                </button>
+
+                                <div class="small fw-semibold" data-status style="min-height:18px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Eventos
+                const statusEl = wrap.querySelector("[data-status]");
+                const btnGuardar = wrap.querySelector('[data-action="guardar"]');
+                const chkActivo = wrap.querySelector('[data-field="activo"]');
+                const fileInput = wrap.querySelector('[data-action="imagen"]');
+                const btnEliminar = wrap.querySelector('[data-action="eliminar"]');
+
+                btnGuardar.addEventListener("click", () => guardarCambios(id, wrap, statusEl));
+                chkActivo.addEventListener("change", () => guardarCambios(id, wrap, statusEl));
+                fileInput.addEventListener("change", (e) => cambiarImagen(id, p, e.target.files[0], statusEl, wrap));
+                btnEliminar.addEventListener("click", () => eliminarDefinitivo(id, p, statusEl, wrap));
+
+                return wrap;
+            }
+
+            // GUARDAR CAMBIOS (nombre/desc/precio/activo)
+            async function guardarCambios(id, wrap, statusEl) {
+                const user = firebase.auth().currentUser;
+                if (!isAdmin(user)) { alert("Acceso denegado"); return; }
+
+                const nombre = wrap.querySelector('[data-field="nombre"]').value.trim();
+                const descripcion = wrap.querySelector('[data-field="descripcion"]').value.trim();
+                const precio = Number(wrap.querySelector('[data-field="precio"]').value);
+                const activo = wrap.querySelector('[data-field="activo"]').checked;
+
+                if (!nombre || !descripcion || Number.isNaN(precio)) {
+                    statusEl.textContent = "❌ Datos inválidos";
+                    statusEl.style.color = "crimson";
+                    return;
+                }
+
+                try {
+                    statusEl.textContent = "Guardando...";
+                    statusEl.style.color = "green";
+
+                    const db = firebase.firestore();
+                    await db.collection("productos").doc(id).update({
+                        nombre, descripcion, precio, activo,
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+
+                    statusEl.textContent = "✅ Guardado";
+                } catch (err) {
+                    console.error(err);
+                    statusEl.textContent = "❌ " + (err?.message || err);
+                    statusEl.style.color = "crimson";
+                }
+            }
+
+            // CAMBIAR IMAGEN
+            async function cambiarImagen(id, p, file, statusEl, wrap) {
+                const user = firebase.auth().currentUser;
+                if (!isAdmin(user)) { alert("Acceso denegado"); return; }
+
+                if (!file) return;
+
+                try {
+                    statusEl.textContent = "Subiendo nueva imagen...";
+                    statusEl.style.color = "green";
+
+                    // Subir nueva
+                    const storageRef = firebase.storage().ref();
+                    const safeName = file.name.replace(/\s+/g, "_");
+                    const newPath = `productos/${Date.now()}_${safeName}`;
+                    const newRef = storageRef.child(newPath);
+
+                    const uploadTask = newRef.put(file);
+                    await new Promise((resolve, reject) => {
+                        uploadTask.on("state_changed",
+                            (snap) => {
+                                const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 100);
+                                statusEl.textContent = `Subiendo... ${pct}%`;
+                            },
+                            reject,
+                            resolve
+                        );
+                    });
+
+                    const newUrl = await newRef.getDownloadURL();
+
+                    // Actualizar Firestore
+                    const db = firebase.firestore();
+                    await db.collection("productos").doc(id).update({
+                        imagenUrl: newUrl,
+                        imagePath: newPath,
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+
+                    // Borrar la vieja si existe
+                    if (p.imagePath) {
+                        try { await storageRef.child(p.imagePath).delete(); } catch (_) {}
+                    }
+
+                    // Actualizar UI
+                    wrap.querySelector("img").src = newUrl;
+                    p.imagenUrl = newUrl;
+                    p.imagePath = newPath;
+
+                    statusEl.textContent = "✅ Imagen actualizada";
+                } catch (err) {
+                    console.error(err);
+                    statusEl.textContent = "❌ " + (err?.message || err);
+                    statusEl.style.color = "crimson";
+                }
+            }
+
+            // ELIMINAR DEFINITIVO (Firestore + Storage)
+            async function eliminarDefinitivo(id, p, statusEl, wrap) {
+                const user = firebase.auth().currentUser;
+                if (!isAdmin(user)) { alert("Acceso denegado"); return; }
+
+                if (!confirm("¿Seguro? Esto elimina el producto definitivamente.")) return;
+
+                try {
+                    statusEl.textContent = "Eliminando...";
+                    statusEl.style.color = "green";
+
+                    const db = firebase.firestore();
+                    await db.collection("productos").doc(id).delete();
+
+                    // borrar imagen
+                    if (p.imagePath) {
+                        try {
+                            await firebase.storage().ref().child(p.imagePath).delete();
+                        } catch (_) { /* si no existe, no importa */ }
+                    }
+
+                    wrap.remove();
+                } catch (err) {
+                    console.error(err);
+                    statusEl.textContent = "❌ " + (err?.message || err);
+                    statusEl.style.color = "crimson";
+                }
+            }
+
+            function escapeHtml(str) {
+                return (str || "")
+                    .replaceAll("&", "&amp;")
+                    .replaceAll("<", "&lt;")
+                    .replaceAll(">", "&gt;")
+                    .replaceAll('"', "&quot;")
+                    .replaceAll("'", "&#039;");
+            }
+        });
+    </script>
+}
