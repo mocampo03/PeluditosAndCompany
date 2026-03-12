@@ -13,166 +13,215 @@
     <link rel="stylesheet" href="~/GroomingWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-            <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
-                    <img src="~/images/Logo_Peluditos.png" alt="Logo" />
-                </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+<div class="container-fluid">
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Catalogo">Catálogo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Citas">Citas</a>
-                        </li>
+<a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+<img src="~/images/Logo_Peluditos.png" alt="Logo" />
+</a>
 
-                        <!-- ✅ Solo Admin -->
-                        <li class="nav-item" id="adminMenuItem" style="display:none;">
-                            <a class="nav-link text-white" asp-controller="Admin" asp-action="Productos">
-                                Administración de productos
-                            </a>
-                        </li>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target=".navbar-collapse">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Conocenos">Conócenos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Contacto">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Carrito">Carrito 🛒</a>
-                        </li>
-                    </ul>
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a id="authLink" class="nav-link text-white" href="/Account/Login">
-                                Iniciar sesión
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<ul class="navbar-nav flex-grow-1">
 
-    <div class="container-fluid content-area">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Index">Inicio</a>
+</li>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Peluditos&Co
-        </div>
-    </footer>
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Catalogo">Catálogo</a>
+</li>
 
-    <!-- Modal: iniciar sesión para continuar -->
-    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 shadow">
-                <div class="modal-body p-4 text-center">
-                    <h4 class="mb-2">Inicia sesión para continuar</h4>
-                    <p class="text-muted mb-4" id="loginModalMsg">
-                        Necesitas iniciar sesión para realizar esta acción.
-                    </p>
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Citas">Citas</a>
+</li>
 
-                    <div class="d-grid gap-2">
-                        <a class="btn btn-primary btn-lg" href="/Account/Login">Iniciar sesión</a>
-                        <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- ADMIN -->
+<li class="nav-item" id="adminMenuItem" style="display:none;">
+<a class="nav-link text-white" asp-controller="Admin" asp-action="Productos">
+Administración de productos
+</a>
+</li>
 
-    <!-- JS base -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+<li class="nav-item" id="adminComprasItem" style="display:none;">
+<a class="nav-link text-white" asp-controller="Admin" asp-action="Compras">
+Compras
+</a>
+</li>
 
-    <!-- Firebase SDKs (compat) -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Conocenos">Conócenos</a>
+</li>
 
-    <script>
-        // 🔹 Configuración Firebase (NUEVA)
-        const firebaseConfig = {
-            apiKey: "AIzaSyAfCt1jrUVJ3xBG_Pr3IlfVwQ2EDuDqIxQ",
-            authDomain: "peluditosandcco.firebaseapp.com",
-            projectId: "peluditosandcco",
-            storageBucket: "peluditosandcco.firebasestorage.app",
-            messagingSenderId: "326789370308",
-            appId: "1:326789370308:web:d4b0055becede2061a1491"
-        };
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Contacto">Contacto</a>
+</li>
 
-        // ✅ Evita error si se carga dos veces
-        if (!firebase.apps || !firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
-        }
+<li class="nav-item">
+<a class="nav-link text-white" asp-controller="Home" asp-action="Carrito">Carrito 🛒</a>
+</li>
 
-        const auth = firebase.auth();
+</ul>
 
-        // UID de tu admin (el mismo que ya usabas en tu app)
-        const ADMIN_UID = "EuEUJzVZ9aObP9uVc2iVB2axK4y2";
+<ul class="navbar-nav">
+<li class="nav-item">
+<a id="authLink" class="nav-link text-white" href="/Account/Login">
+Iniciar sesión
+</a>
+</li>
+</ul>
 
-        // ✅ helper global: popup “Inicia sesión”
-        function requireLogin(message) {
-            const msgEl = document.getElementById("loginModalMsg");
-            if (msgEl) msgEl.textContent = message || "Necesitas iniciar sesión para continuar.";
+</div>
+</div>
+</nav>
+</header>
 
-            const modalEl = document.getElementById("loginRequiredModal");
-            const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-            modal.show();
-        }
+<div class="container-fluid content-area">
+<main role="main" class="pb-3">
+@RenderBody()
+</main>
+</div>
 
-        // 🔹 Cambiar link según sesión + mostrar admin
-        auth.onAuthStateChanged(user => {
-            const authLink = document.getElementById("authLink");
-            const adminMenuItem = document.getElementById("adminMenuItem");
+<footer class="border-top footer text-muted">
+<div class="container">
+&copy; 2025 - Peluditos&Co
+</div>
+</footer>
 
-            // ✅ guardamos usuario global (para Catalogo/Detalle/Citas/Factura, etc.)
-            window.__user = user || null;
 
-            if (authLink) {
-                if (user) {
-                    const displayName = (user.uid === ADMIN_UID)
-                        ? "admin"
-                        : (user.email || "usuario");
+<!-- Modal login requerido -->
+<div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content rounded-4 shadow">
+<div class="modal-body p-4 text-center">
 
-                    authLink.textContent = `${displayName}, Cerrar sesión`;
-                    authLink.href = "#";
-                    authLink.onclick = (e) => {
-                        e.preventDefault();
-                        auth.signOut();
-                    };
-                } else {
-                    authLink.textContent = "Iniciar sesión";
-                    authLink.href = "/Account/Login";
-                    authLink.onclick = null;
-                }
-            }
+<h4 class="mb-2">Inicia sesión para continuar</h4>
 
-            if (adminMenuItem) {
-                adminMenuItem.style.display = (user && user.uid === ADMIN_UID) ? "block" : "none";
-            }
-        });
-    </script>
+<p class="text-muted mb-4" id="loginModalMsg">
+Necesitas iniciar sesión para realizar esta acción.
+</p>
 
-    @await RenderSectionAsync("Scripts", required: false)
+<div class="d-grid gap-2">
+<a class="btn btn-primary btn-lg" href="/Account/Login">Iniciar sesión</a>
+<button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- JS base -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+
+<script>
+
+const firebaseConfig = {
+apiKey: "AIzaSyAfCt1jrUVJ3xBG_Pr3IlfVwQ2EDuDqIxQ",
+authDomain: "peluditosandcco.firebaseapp.com",
+projectId: "peluditosandcco",
+storageBucket: "peluditosandcco.firebasestorage.app",
+messagingSenderId: "326789370308",
+appId: "1:326789370308:web:d4b0055becede2061a1491"
+};
+
+
+if (!firebase.apps || !firebase.apps.length) {
+firebase.initializeApp(firebaseConfig);
+}
+
+const auth = firebase.auth();
+
+const ADMIN_UID = "EuEUJzVZ9aObP9uVc2iVB2axK4y2";
+
+
+function requireLogin(message) {
+
+const msgEl = document.getElementById("loginModalMsg");
+
+if (msgEl)
+msgEl.textContent = message || "Necesitas iniciar sesión para continuar.";
+
+const modalEl = document.getElementById("loginRequiredModal");
+
+const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+modal.show();
+
+}
+
+
+auth.onAuthStateChanged(user => {
+
+const authLink = document.getElementById("authLink");
+const adminMenuItem = document.getElementById("adminMenuItem");
+const adminComprasItem = document.getElementById("adminComprasItem");
+
+window.__user = user || null;
+
+
+if (authLink) {
+
+if (user) {
+
+const displayName = (user.uid === ADMIN_UID)
+? "admin"
+: (user.email || "usuario");
+
+authLink.textContent = `${displayName}, Cerrar sesión`;
+
+authLink.href = "#";
+
+authLink.onclick = (e) => {
+e.preventDefault();
+auth.signOut();
+};
+
+}
+
+else {
+
+authLink.textContent = "Iniciar sesión";
+authLink.href = "/Account/Login";
+authLink.onclick = null;
+
+}
+
+}
+
+
+const isAdmin = user && user.uid === ADMIN_UID;
+
+
+if (adminMenuItem)
+adminMenuItem.style.display = isAdmin ? "block" : "none";
+
+if (adminComprasItem)
+adminComprasItem.style.display = isAdmin ? "block" : "none";
+
+});
+
+</script>
+
+@await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

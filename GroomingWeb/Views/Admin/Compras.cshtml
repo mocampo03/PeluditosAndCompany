@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "Compras";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Compras realizadas</h1>
+
+    <div id="comprasWrap"></div>
+</div>
+
+@section Scripts {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const wrap = document.getElementById("comprasWrap");
+
+    firebase.auth().onAuthStateChanged(async (user) => {
+        if (!user) {
+            requireLogin("Inicia sesión para ver compras.");
+            wrap.innerHTML = "";
+            return;
+        }
+        if (user.uid !== ADMIN_UID) {
+            wrap.innerHTML = `<div class="alert alert-danger text-center">Acceso solo para administrador.</div>`;
+            return;
+        }
+
+        try {
+            const db = firebase.firestore();
+            const snap = await db.collection("compras")
+                .orderBy("createdAt", "desc")
+                .limit(100)
+                .get();
+
+            if (snap.empty) {
+                wrap.innerHTML = `<div class="alert alert-warning text-center">No hay compras registradas.</div>`;
+                return;
+            }
+
+            let html = `
+              <div class="table-responsive">
+                <table class="table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Usuario</th>
+                      <th class="text-end">Total</th>
+                      <th class="text-end">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+            `;
+
+            snap.forEach(doc => {
+                const c = doc.data();
+                const id = doc.id;
+
+                const fecha = c.createdAt && c.createdAt.toDate
+                    ? c.createdAt.toDate().toLocaleString()
+                    : "—";
+
+                const email = c.email || c.uid || "—";
+                const total = c.total ?? 0;
+
+                html += `
+                  <tr>
+                    <td>${fecha}</td>
+                    <td>${email}</td>
+                    <td class="text-end fw-bold">₡${Number(total).toLocaleString()}</td>
+                    <td class="text-end">
+                      <a class="btn btn-sm btn-primary" href="/Admin/CompraDetalle?id=${id}">
+                        Ver detalle
+                      </a>
+                    </td>
+                  </tr>
+                `;
+            });
+
+            html += `</tbody></table></div>`;
+            wrap.innerHTML = html;
+
+        } catch (e) {
+            console.error(e);
+            wrap.innerHTML = `<div class="alert alert-danger text-center">Error cargando compras. Revisa consola.</div>`;
+        }
+    });
+});
+</script>
+}

@@ -3,7 +3,7 @@
 }
 
 <div class="container my-5 d-flex justify-content-center">
-    <div class="p-4 shadow rounded bg-white" style="max-width: 500px; width:100%;" id="facturaWrap">
+    <div class="p-4 shadow rounded bg-white" style="max-width: 520px; width:100%;" id="facturaWrap">
 
         <h2 class="text-center mb-3">Peluditos & Co</h2>
         <p class="text-center text-muted mb-4">Factura / Ticket</p>
@@ -18,6 +18,8 @@
             <span>Total</span>
             <span id="facturaTotal">₡0</span>
         </div>
+
+        <div class="text-center text-muted mt-2" id="orderCode" style="display:none;"></div>
 
         <hr>
 
@@ -35,33 +37,58 @@
 </div>
 
 @section Scripts {
-    <script>
-        function getCart() {
-            return JSON.parse(localStorage.getItem("cart") || "[]");
-        }
+<script>
+    function getCart() {
+        return JSON.parse(localStorage.getItem("cart") || "[]");
+    }
 
-        function formatCRC(value) {
-            return "₡" + value.toLocaleString();
-        }
+    function formatCRC(value) {
+        return "₡" + value.toLocaleString();
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
+    async function guardarCompraEnFirestore(user, cart, total) {
+        const db = firebase.firestore();
 
-        firebase.auth().onAuthStateChanged(user => {
+        // items listos para guardarse
+        const items = cart.map(p => ({
+            id: String(p.id),
+            nombre: p.nombre,
+            precio: Number(p.precio),
+            cantidad: Number(p.cantidad),
+            subtotal: Number(p.precio) * Number(p.cantidad),
+            imagen: p.imagen || null
+        }));
+
+        // Documento de compra
+        const compra = {
+            uid: user.uid,
+            email: user.email || "desconocido",
+            total: total,
+            items: items,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        const docRef = await db.collection("compras").add(compra);
+        return docRef.id;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const wrap = document.getElementById("facturaWrap");
+        const itemsEl = document.getElementById("facturaItems");
+        const totalEl = document.getElementById("facturaTotal");
+        const codeEl = document.getElementById("orderCode");
+
+        firebase.auth().onAuthStateChanged(async (user) => {
             if (!user) {
                 requireLogin("Inicia sesión para continuar con la factura.");
-                document.getElementById("facturaWrap").style.display = "none";
+                wrap.style.display = "none";
                 return;
             }
 
-            // aquí va la lógica de factura...
-        });
-
-            const items = document.getElementById("facturaItems");
-            const totalEl = document.getElementById("facturaTotal");
             const cart = getCart();
 
             if (cart.length === 0) {
-                items.innerHTML = `
+                itemsEl.innerHTML = `
                     <div class="alert alert-warning text-center">
                         No hay productos para facturar.
                     </div>`;
@@ -69,14 +96,15 @@
                 return;
             }
 
+            // Render factura
             let total = 0;
-            items.innerHTML = "";
+            itemsEl.innerHTML = "";
 
             cart.forEach(p => {
-                const subtotal = p.precio * p.cantidad;
+                const subtotal = Number(p.precio) * Number(p.cantidad);
                 total += subtotal;
 
-                items.innerHTML += `
+                itemsEl.innerHTML += `
                     <div class="d-flex justify-content-between mb-2">
                         <div>
                             ${p.nombre} <span class="text-muted">x${p.cantidad}</span>
@@ -88,10 +116,34 @@
 
             totalEl.textContent = formatCRC(total);
 
-            // VACÍA EL CARRITO DESPUÉS DE GENERAR LA FACTURA
-            localStorage.removeItem("cart");
+            // ✅ Evitar duplicar compra si recarga la página
+            const alreadySaved = sessionStorage.getItem("order_saved");
+            if (!alreadySaved) {
+                try {
+                    const orderId = await guardarCompraEnFirestore(user, cart, total);
+                    sessionStorage.setItem("order_saved", "1");
+                    sessionStorage.setItem("last_order_id", orderId);
+
+                    codeEl.style.display = "block";
+                    codeEl.textContent = `Código de compra: ${orderId}`;
+                } catch (e) {
+                    console.error("Error guardando compra:", e);
+                    // No vaciamos carrito si no se guardó
+                    alert("No se pudo registrar la compra. Revisa tu conexión/reglas de Firestore.");
+                    return;
+                }
+
+                // ✅ Vacía carrito solo si se guardó bien
+                localStorage.removeItem("cart");
+            } else {
+                // Si ya estaba guardada (refresh), solo muestra el código si existe
+                const lastId = sessionStorage.getItem("last_order_id");
+                if (lastId) {
+                    codeEl.style.display = "block";
+                    codeEl.textContent = `Código de compra: ${lastId}`;
+                }
+            }
         });
-    </script>
+    });
+</script>
 }
-
-

@@ -114,3 +114,4 @@ F:/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/r
 /Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.pdb
 /Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.genruntimeconfig.cache
 /Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/ref/GroomingWeb.dll
+/Users/miguelocampo/Documents/Copia de Kingston (archivos windows)/Fidelitas/Implantacion de Sistemas/GroomingWeb/GroomingWeb/obj/Debug/net8.0/GroomingWeb.sourcelink.json

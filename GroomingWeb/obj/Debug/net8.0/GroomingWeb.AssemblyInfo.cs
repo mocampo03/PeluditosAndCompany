@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GroomingWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f81538446d12174a7f66ba8af5d90fa4cac3cf45")]
 [assembly: System.Reflection.AssemblyProductAttribute("GroomingWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GroomingWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
